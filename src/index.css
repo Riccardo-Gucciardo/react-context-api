@@ -1,0 +1,21 @@
+.active{
+  background-color: black;
+}
+header li{
+  list-style-type: none;
+  list-style: none;
+}
+
+header ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+header{
+  background-color: lightgray;
+  padding: 10px;
+}
+header a{
+  text-decoration: none;
+  color: white;
+}
