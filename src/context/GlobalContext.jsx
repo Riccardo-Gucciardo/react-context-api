@@ -1,4 +1,4 @@
-import { createContext,useState,useContext, Children } from "react";
+import { createContext,useState,useContext} from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom"
 
@@ -20,8 +20,9 @@ const fetchPosts = () => {
         content: "",
         image: "",
         tags: [],
-}
+    }
 const {id} = useParams()
+
 const [ post,setPost] = useState(initialPost); 
 
 const fetchSingoloPost = (id) => {
@@ -43,9 +44,9 @@ return(
 )
 
 }
+const useGlobalContext = useContext(GlobalContext)
 
- const useGlobalContext = useContext(GlobalContext)
- export{
+export{
     GlobalProvider,
     useGlobalContext
  }

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import axios from "axios"
-import { useEffect} from "react"
-import {useGlobalContext} from "../context/GlobalContext"
+import { useEffect,useState } from "react"
+import { useGlobalContext } from "../context/GlobalContext"
 
 const SingleProducts = () => {
 
@@ -14,21 +14,16 @@ const SingleProducts = () => {
     //         image: "",
     //         tags: [],
     // }
+    const [ post,fetchPost] = useGlobalContext()
     
     // const [ post,setPost] = useState(initialPost); 
-     const {post,fetchpost} = useGlobalContext()
-
     
-    
-     useEffect(() => {
+    useEffect(() => {
             // axios.get('http://localhost:3000/api/posts' + '/' + id).then(res => setPost(res.data))
             // .catch(err => console.error(err))
-        fetchpost(id)
+            fetchPost(id)
+
     },[id])
-
-   
-
-
 
     return(
         <h1>prodotto selezionato: {post.title}</h1> 
