@@ -46,4 +46,4 @@ return(
 
 const useGlobalContext = useContext()
 
-export default {GlobalProvider,useGlobalContext}
+export default {GlobalProvider, useGlobalContext}
