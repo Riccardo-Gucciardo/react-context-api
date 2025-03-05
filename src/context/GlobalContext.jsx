@@ -3,7 +3,7 @@ import axios from "axios";
 
 const GlobalContext = createContext()
 
-const GlobalProvider = ({Children}) => {
+const GlobalProvider = ({children}) => {
 
     const [posts, setPosts] = useState([])
 const fetchPosts = () => {
