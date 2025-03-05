@@ -11,10 +11,13 @@ import SingleProducts from './pages/SingleProduct';
 //layouts
 import { DefaultLayout } from './layouts/DefaultLayout';
 
+import {GlobalProvider} from './context/GlobalContext'
+
 
 
 function App() {
   return (
+    <GlobalProvider>
     <BrowserRouter>
       <Routes>
         <Route Component={DefaultLayout}>
@@ -25,6 +28,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </GlobalProvider>
   );
 }
 
