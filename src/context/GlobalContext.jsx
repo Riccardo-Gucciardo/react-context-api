@@ -6,10 +6,26 @@ const GlobalContext = createContext()
 const GlobalProvider = ({Children}) => {
 
     const [posts, setPosts] = useState([])
-
-    useEffect( () => {
+const fetchPosts = () => {
         axios.get('http://localhost:3000/api/posts')
         .then(res => setPosts(res.data))
-        .catch((err) => console.error(err))
-    })
+        .catch((err) => console.error(err))    
+}
+
+
+    const initialPost = {
+        id: "",
+        title: "",
+        content: "",
+        image: "",
+        tags: [],
+}
+
+const [ post,setPost] = useState(initialPost); 
+
+const fetchSingoloPost = () => {
+        axios.get('http://localhost:3000/api/posts' + '/' + id).then(res => setPost(res.data))
+        .catch(err => console.error(err))    
+}
+
 }
