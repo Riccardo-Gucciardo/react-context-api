@@ -11,7 +11,7 @@ import SingleProducts from './pages/SingleProduct';
 //layouts
 import { DefaultLayout } from './layouts/DefaultLayout';
 
-import {GlobalProvider} from './context/GlobalContext'
+import { GlobalProvider } from './context/GlobalContext';
 
 
 

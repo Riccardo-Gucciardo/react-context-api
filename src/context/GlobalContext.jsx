@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 
 const GlobalContext = createContext()
 
-const GlobalProvider = ({children}) => {
+ const GlobalProvider = ({children}) => {
 
     const [posts, setPosts] = useState([])
 const fetchPosts = () => {
@@ -44,6 +44,8 @@ return(
 
 }
 
-const useGlobalContext = useContext()
-
-export default {GlobalProvider, useGlobalContext}
+ const useGlobalContext = useContext(GlobalContext)
+ export{
+    GlobalProvider,
+    useGlobalContext
+ }

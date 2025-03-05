@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import axios from "axios"
 import { NavLink } from "react-router-dom"
-import {useGlobalContext} from "../context/GlobalContext"
+import { useGlobalContext } from "../context/GlobalContext"
 
 const PostList = () => {
 
