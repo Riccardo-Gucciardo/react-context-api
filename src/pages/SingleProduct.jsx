@@ -14,14 +14,14 @@ const SingleProducts = () => {
     //         image: "",
     //         tags: [],
     // }
-    const [ post,fetchPost] = useGlobalContext()
+    const {post,fetchSingoloPost} = useGlobalContext()
     
     // const [ post,setPost] = useState(initialPost); 
     
     useEffect(() => {
             // axios.get('http://localhost:3000/api/posts' + '/' + id).then(res => setPost(res.data))
             // .catch(err => console.error(err))
-            fetchPost(id)
+        fetchSingoloPost(id)
 
     },[id])
 

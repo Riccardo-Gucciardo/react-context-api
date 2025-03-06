@@ -19,7 +19,7 @@ const PostList = () => {
  
     useEffect( () => {
         axios.get('http://localhost:3000/api/posts')
-        .then(res => setPosts(res.data))
+        .then(res => fetchPosts(res.data))
         .catch((err) => console.error(err))
     })
 

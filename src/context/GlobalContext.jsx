@@ -4,14 +4,14 @@ import { useParams } from "react-router-dom"
 
 const GlobalContext = createContext()
 
- const GlobalProvider = ({children}) => {
+export const GlobalProvider = ({children}) => {
 
     const [posts, setPosts] = useState([])
-const fetchPosts = () => {
+    const fetchPosts = () => {
         axios.get('http://localhost:3000/api/posts')
         .then(res => setPosts(res.data))
         .catch((err) => console.error(err))    
-}
+    }
 
 
     const initialPost = {
@@ -21,32 +21,33 @@ const fetchPosts = () => {
         image: "",
         tags: [],
     }
-const {id} = useParams()
 
-const [ post,setPost] = useState(initialPost); 
+    const {id} = useParams()
 
-const fetchSingoloPost = (id) => {
+    const [ post,setPost] = useState(initialPost); 
+
+    const fetchSingoloPost = (id) => {
         axios.get('http://localhost:3000/api/posts' + '/' + id).then(res => setPost(res.data))
         .catch(err => console.error(err))    
+    }
+
+    const value = {
+        posts,
+        post,
+        fetchPosts,
+        fetchSingoloPost,
+    };
+
+    return(
+        <GlobalContext.Provider value={value}>
+         {children}
+        </GlobalContext.Provider>
+    )
+
 }
 
-const value = {
-    posts,
-    post,
-    fetchPosts,
-    fetchSingoloPost,
-};
-
-return(
-    <GlobalContext.Provider value={value}>
-        {children}
-    </GlobalContext.Provider>
-)
-
+// 
+export const useGlobalContext = () =>{
+    const Value =  useContext(GlobalContext);
+    return Value;
 }
-const useGlobalContext = useContext(GlobalContext)
-
-export{
-    GlobalProvider,
-    useGlobalContext
- }
