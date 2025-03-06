@@ -23,7 +23,7 @@ const SingleProducts = () => {
             // .catch(err => console.error(err))
         fetchSingoloPost(id)
 
-    },[id])
+    },[id]) 
 
     return(
         <h1>prodotto selezionato: {post.title}</h1> 
